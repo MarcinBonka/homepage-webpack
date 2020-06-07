@@ -63,5 +63,35 @@ module.exports = {
       chunks: ["index", "another"],
       filename: "another.html",
     }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/elektronika.html",
+      inject: true,
+      chunks: ["index", "elektronika"],
+      filename: "elektronika.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/inwestowanie.html",
+      inject: true,
+      chunks: ["index", "inwestowanie"],
+      filename: "inwestowanie.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/mojapraca.html",
+      inject: true,
+      chunks: ["index", "mojapraca"],
+      filename: "mojapraca.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/myhouse.html",
+      inject: true,
+      chunks: ["index", "myhouse"],
+      filename: "myhouse.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/omnie.html",
+      inject: true,
+      chunks: ["index", "omnie"],
+      filename: "omnie.html",
+    }),
   ],
 };

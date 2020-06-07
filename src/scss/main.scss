@@ -3,6 +3,7 @@
 @import "_variables";
 @import "modules/hello.scss";
 
+/*
 body {
   background: $wtf;
   color: #fff;
@@ -11,3 +12,397 @@ body {
   justify-content: center;
   min-height: 100vh;
 }
+*/
+
+html{
+  box-sizing: border-box;
+}
+
+*, *:before, *:after{
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #2b2b29;
+  background: linear-gradient(175deg, rgba(2,0,36,1) 0%, rgba(9,92,121,0.938813025210084) 64%, rgb(9, 102, 121) 100%);
+  color: #989c94;
+  padding-left: 20px;
+}
+
+main {
+  margin-top: 70px;
+  min-height: 100vh;
+}
+
+h1 {
+  color: #e3e7d3;
+}
+
+h5 {
+  color: rgb(204, 145, 19);
+}
+
+.index{
+  &__currenttime{
+    color: greenyellow;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  &__elapsedhours{
+    color: rgb(247, 231, 19);
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+/* my sass update */
+.main {
+  margin-top: 70px;
+  min-height: 100vh;
+
+      &__myhouse{
+          display: grid;
+          grid-template-columns: [first] 1fr [second] 1fr  [third] 300px;
+          grid-template-rows: auto 100px; 
+
+          /* grid-template-areas: 
+              "main__myhouse__mainheader main__myhouse__mainheader main__myhouse__mainheader" 
+              "main__myhouse__gridheader--ourwork main__myhouse__gridheader--orderedwork spacer" 
+              "main__myhouse__article__ourwork main__myhouse__article__orderedwork main__myhouse__aside" 
+              "main__myhouse__footer main__myhouse__footer main__myhouse__footer"; */
+
+              grid-template-areas: "header1 header1 header1" "header2 header3 ." "article-left article-right aside" "footer footer footer";
+              column-gap: 16px;
+              row-gap: 16px;
+      }
+
+      &__myhouse__mainheader{
+          /* grid-area: header1; */
+          
+          /*
+          grid-column-start: 1;
+          grid-column-end: 4;
+          */
+          
+          grid-column: first / span 2;
+          }
+
+      &__myhouse__gridheader{
+          background-color: #a72608;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          }
+
+      &__myhouse__gridheader--ourwork{
+          grid-area: header2;
+          }
+      
+          
+      &__myhouse__gridheader--orderedwork{
+          grid-area: header3;
+          }
+
+      &__myhouse__article__ourwork{
+          grid-area: article-left;
+          }
+
+      &__myhouse__article__orderedwork{
+          grid-area: article-right;
+          }
+
+      &__myhouse__aside{
+          grid-area: aside;
+          }
+
+      &__myhouse__footer{
+          grid-area: footer;
+          }
+                 
+}
+
+@media screen and (max-width: 778px){
+  .main{
+      &--shiftsmall--js {
+          margin-top: 25px;
+      }
+      &--shiftlarge--js {
+          margin-top: 160px;
+      }
+  }    
+
+      
+  }  
+
+  .index{
+      &__heading::before{
+      content: 'START... ';
+      }
+  
+      &__heading::after{
+      content: ' ...FINISH';
+
+     
+    }
+  }
+
+  .navi{
+      background: #090c02;
+      border-color: #a72608;
+      border-style: solid;
+      border-width: 2px;
+      border-radius: 2px;
+      padding: 20px;
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 60px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      /* margin: 10px; */
+      /* box-sizing: border-box; */
+      &__link{
+          color: #989c94;
+          padding-left: 10px;
+          padding-right: 10px;
+              &--red{
+                  color: #e2491b;
+              }
+
+              &:hover{
+              background-color: rgb(0, 225, 255);
+              }
+          }           
+  }
+
+/* end of my sass update */
+
+
+footer {
+  padding-top: 20px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #a72608;
+}
+
+.lesson-header {
+  color: #bdc2bf;
+  /* background-color: khaki; */
+}
+
+
+.box-picturetext {
+  display: inline-block;
+  border-style: double;
+  border-width: 1px;
+  border-radius: 2px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.box-picturetext-picture {
+  display: inline-block;
+  width: 40%;
+  /* vertical-align: middle; */
+}
+
+.box-picturetext-text {
+  /* padding: 20px; */
+  display: inline-block;
+  margin-left: 10px;
+  width: 50%;
+  vertical-align: top;
+}
+
+.box-electronica-content {
+  /* width: 50%; */
+  padding: 20px 20%;
+  margin: 0 auto;
+}
+
+.investment-experience{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.investment-experience__box {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #fa9f42;
+  width: 20%;
+  height: 200px;
+  /* padding: 10px; */
+  /* display: inline-block;*/
+  
+  min-width: 200px;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+.investment-experience__box__bar {
+  background-color: rgb(184, 76, 13);
+  color: rgb(248, 195, 97);
+  width: 100%;
+  height: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+
+.investment-goldenrules {
+  background-color: rgb(105, 64, 11);
+  margin: 20px 20px 20px 0px;
+  padding: 20px;
+  height: 300px;
+  position: relative;
+}
+
+.investment-goldenrule__box {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #fa9f42;
+  width: 200px;
+  /* margin: 10px; */
+  padding: 10px;
+  background: rgb(7, 88, 41);
+  z-index: 99;
+  position: absolute;
+}
+
+.investment-goldenrule__box--red{
+  background: rgb(151, 8, 51);
+  z-index: 100;
+}
+
+
+.box-mysticky1 {
+  color: rgb(114, 110, 103);
+  background-color: #080808;
+  border-style: outset;
+  border-width: 1px;
+  border-color: rgb(248, 195, 97);
+  width: 100%;
+  height: 20px;
+  top: 60px; /* To jest istotna właściwość dla sticky czyli odległośc od góry przy której zatrzymie się box z position sticky */
+  position: sticky;
+}
+
+.box-myfloat1 {
+  color: black;
+  background: rgb(204, 145, 19);
+  float: left;
+  height: 100px;
+}
+
+.wtf_frontend__lesson{
+  background-color: #3b3831;
+  border-style: outset;
+  border-width: 1px;
+  border-color: rgb(248, 195, 97);
+  padding-left: 20px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  
+}
+
+.investment-experience__box__content--akcgpw-js{
+  color: white;
+}
+/* .investment-experience__box__content{
+  color:  #664b0b;
+
+} */
+
+
+
+.index_heading--js{
+  background-color: #fa9f42;
+}
+
+.btnHamburger{
+  display: none;
+  position: fixed;
+  right:2px;
+  top:2px;
+  z-index: 10;
+}
+
+.mygrid{
+    &_container{
+      display: grid;
+      background-color: #ebdbcb;
+      grid-gap: 2px;
+      grid-template-columns: 25% 25% 25% 25%;
+      grid-template-rows: 100px 100px 100px 100px;
+    }
+    &_item1{
+      background-color: rgb(197, 63, 103);
+      grid-column: 1;
+      grid-row: 2;
+    }
+    &_item2{
+      background-color: rgb(197, 63, 103);
+      grid-column: 3;
+      grid-row: 3;
+    }
+}
+
+
+@media screen and (max-width: 778px){
+  .navi {
+    /* background: #435c0b; */
+    height: 160px;
+    /* flex-flow: column nowrap;*/
+    justify-content: left;
+    /*overflow: hidden;*/
+    white-space: nowrap;
+    display: none;
+    /*
+    border-color: #a72608;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 2px;
+    padding: 20px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    */
+
+    &--open--js{
+      display: block;
+    }
+    &__link{
+      /*width: 100%;*/
+      display: block;
+    }
+  }
+
+  .btnHamburger{
+      display: block;
+      
+    }
+    
+  }
+
+  /*
+  main {
+    margin-top: 160px;
+  }
+  */
+  
+
+  
+
+
+
