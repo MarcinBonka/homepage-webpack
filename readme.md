@@ -8,49 +8,33 @@ You can find here few strange things, not well tailored colors as well as conten
 ## 2. How do I train my skills?
 > "**Learning** is not attained by chance, it must be sought for with ardor and attended to with diligence"
 > 	 Abigail Adams
+
 Throughout of whole course I try to preserve followinch approach.
 1. Watch each episode of whole lesson (make a notes)
 2. Check homework and transfer each exercise to [Trello](https://trello.com/)
 3. Do homework watching carefully again each part of the lesson associated with currently executed homework subject.
 
-## 3. My strenghts and weeknesses
+## 3. My strenghts and weaknesses
 In general due to my past experience I feel good in each area of the training where JavaScript is involved. I's quite *easy* to understand JavaScript whereas several aspects ae totally new for me and I like them much. Especially accesing and altering a web page (content/styles/behaviour).
 Code Example:
 ```javascript
 const  btnHamburger = document.querySelector('.btnHamburger--js');
-
 btnHamburger.addEventListener('click',() => {
-
 const  naviMenu = document.querySelector('.navi--js');
-
 naviMenu.classList.toggle('navi--open--js');
-
 const  indexMain = document.querySelector('.index__main--js')
-
 if(naviMenu.classList.contains('navi--open--js'))
-
 {
-
-if(indexMain.classList.contains('main--shiftsmall--js'))
-
-{
-
-indexMain.classList.remove('main--shiftsmall--js');
-
-indexMain.classList.add('main--shiftlarge--js');
-
-}
-
-} else  if(indexMain.classList.contains('main--shiftlarge--js'))
-
-{
-
-indexMain.classList.remove('main--shiftlarge--js');
-
-indexMain.classList.add('main--shiftsmall--js');
-
-}
-
+    if(indexMain.classList.contains('main--shiftsmall--js'))
+    {
+        indexMain.classList.remove('main--shiftsmall--js');
+        indexMain.classList.add('main--shiftlarge--js');
+    } 
+    else  if(indexMain.classList.contains('main--shiftlarge--js'))
+    {
+        indexMain.classList.remove('main--shiftlarge--js');
+        indexMain.classList.add('main--shiftsmall--js');
+    }
 });
 ```
 From the other hand one of my weekness (not the only one :)) is styling and using css. I've never did it before so here I spend a lot of the time to grasp as much knowledge as I can.
