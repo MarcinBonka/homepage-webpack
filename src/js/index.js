@@ -55,35 +55,40 @@ console.log(typeof('2.11'));
 
 /* Obsługa buttona do modyfikacji nagłówka strony index */
 const button = document.querySelector('.buttonClickMe__action--js');
-button.addEventListener('click', (e) => {
-  console.log(`button ${button.innerHTML} clicked `);
-  console.log(`Now I'm changing the heading text`);
-  const indexHeading = document.querySelector('.index__heading');
-  indexHeading.innerHTML = 'A to jest now nagłówek';
-  console.log(`A teraz zmienie kole tła dla nagłówka przez dodanie klasy w java script`);
-  indexHeading.classList.toggle('index_heading--js');
-});
+if(button != null)
+{
+  button.addEventListener('click', (e) => {
+    console.log(`button ${button.innerHTML} clicked `);
+    console.log(`Now I'm changing the heading text`);
+    const indexHeading = document.querySelector('.index__heading');
+    indexHeading.innerHTML = 'A to jest now nagłówek';
+    console.log(`A teraz zmienie kole tła dla nagłówka przez dodanie klasy w java script`);
+    indexHeading.classList.toggle('index_heading--js');
+  });
+}
 
 /* Obsługa buttona "hamburger" (menu) */
 const btnHamburger = document.querySelector('.btnHamburger--js');
-btnHamburger.addEventListener('click',() => {
-  const naviMenu = document.querySelector('.navi--js');
-  naviMenu.classList.toggle('navi--open--js');
-  const indexMain = document.querySelector('.index__main--js')
-  if(naviMenu.classList.contains('navi--open--js'))
-  {
-    if(indexMain.classList.contains('main--shiftsmall--js'))
+if(btnHamburger != null)
+{
+  btnHamburger.addEventListener('click',() => {
+    const naviMenu = document.querySelector('.navi--js');
+    naviMenu.classList.toggle('navi--open--js');
+    const indexMain = document.querySelector('.index__main--js')
+    if(naviMenu.classList.contains('navi--open--js'))
     {
-      indexMain.classList.remove('main--shiftsmall--js');
-      indexMain.classList.add('main--shiftlarge--js');
+      if(indexMain.classList.contains('main--shiftsmall--js'))
+      {
+        indexMain.classList.remove('main--shiftsmall--js');
+        indexMain.classList.add('main--shiftlarge--js');
+      }
+    } else if(indexMain.classList.contains('main--shiftlarge--js'))
+    {
+      indexMain.classList.remove('main--shiftlarge--js');
+      indexMain.classList.add('main--shiftsmall--js');
     }
-  } else if(indexMain.classList.contains('main--shiftlarge--js'))
-  {
-    indexMain.classList.remove('main--shiftlarge--js');
-    indexMain.classList.add('main--shiftsmall--js');
-  }
-});
-
+  });
+}
 /* Lesson 08: New messages added via imported function/variables */
 console.log(helloMessage('Bonio'));
 console.log(`Imie = ${marcin.Name}`);
@@ -96,6 +101,8 @@ moment.locale('pl');
 console.log(`Aktualna data: ${moment().format('MMMM Do YYYY, h:mm:ss a')}`);
 console.log(`Lokalizacja dla moment: ${moment().locale()}`);
 const txtCurrentTime = document.querySelector('.index__currenttime--js');
-txtCurrentTime.innerHTML = `Aktualny czas: ${moment().format('MMMM Do YYYY, h:mm:ss a')}`;
+if(txtCurrentTime != null)
+  txtCurrentTime.innerHTML = `Aktualny czas: ${moment().format('MMMM Do YYYY, h:mm:ss a')}`;
 const txtElapsedHours = document.querySelector('.index__elapsedhours--js');
-txtElapsedHours.innerHTML = `Początek dnia nastąpił ${moment().startOf('day').fromNow()}`;
+if(txtElapsedHours!=null)
+  txtElapsedHours.innerHTML = `Początek dnia nastąpił ${moment().startOf('day').fromNow()}`;
