@@ -39,7 +39,7 @@ h1 {
 }
 
 h5 {
-  color: rgb(204, 145, 19);
+  color: rgb(238, 216, 168);
 }
 
 .index{
@@ -308,6 +308,12 @@ footer {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 10px;
+  &-link{
+    color: rgb(150, 200, 204);
+    &:hover{
+      color: red;
+    }
+  }
   
 }
 
